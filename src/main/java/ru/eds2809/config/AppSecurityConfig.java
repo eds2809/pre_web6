@@ -14,6 +14,7 @@ import org.springframework.security.config.annotation.web.configuration.WebSecur
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.web.authentication.AuthenticationSuccessHandler;
+import ru.eds2809.handlers.AuthenticationSuccessHandlerImpl;
 
 @Configuration
 @EnableWebSecurity
@@ -21,9 +22,9 @@ import org.springframework.security.web.authentication.AuthenticationSuccessHand
 @ComponentScan("ru.eds2809")
 public class AppSecurityConfig extends WebSecurityConfigurerAdapter {
 
-
     @Autowired
-    UserDetailsService userDetailsService;
+    private UserDetailsService userDetailsService;
+
 
     @Bean
     public BCryptPasswordEncoder passwordEncoder() {
@@ -40,9 +41,9 @@ public class AppSecurityConfig extends WebSecurityConfigurerAdapter {
     @Override
     protected void configure(HttpSecurity http) throws Exception {
 
-        //http.antMatcher("/*").anonymous();
+        http.antMatcher("/*").anonymous();
 
-        http.authorizeRequests()
+       /* http.authorizeRequests()
                 .antMatchers("/admin/**").access("hasRole('ROLE_ADMIN')")
                 .antMatchers("/").access("hasAnyRole('ROLE_USER','ROLE_ADMIN')")
                 .and()
@@ -51,7 +52,7 @@ public class AppSecurityConfig extends WebSecurityConfigurerAdapter {
                 .successHandler(getAuthenticationSuccessHandler())
                 .and().logout()
                 .invalidateHttpSession(true)
-                .deleteCookies("JSESSIONID");
+                .deleteCookies("JSESSIONID");*/
 
 
     }

@@ -228,6 +228,9 @@
   <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="11.0.6" project-jdk-type="JavaSDK">
     <output url="file://$PROJECT_DIR$/out" />
   </component>
+  <component name="SqlDialectMappings">
+    <file url="file://$PROJECT_DIR$/src/main/resources/database.sql" dialect="MariaDB" />
+  </component>
   <component name="dataSourceStorageLocal">
     <data-source name="@localhost" uuid="d7804783-9cfd-4f3a-8a1b-6e4f694fb1fc">
       <database-info product="MariaDB" version="10.4.12-MariaDB" jdbc-version="4.2" driver-name="MariaDB Connector/J" driver-version="2.4.1" dbms="MARIADB" exact-version="10.4.12" exact-driver-version="2.4">

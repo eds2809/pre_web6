@@ -1,4 +1,4 @@
-package ru.eds2809.config;
+package ru.eds2809.security;
 
 import org.springframework.security.web.context.AbstractSecurityWebApplicationInitializer;
 

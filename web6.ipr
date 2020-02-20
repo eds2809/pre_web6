@@ -26,29 +26,28 @@
             <element id="library" level="project" name="Maven: org.springframework:spring-jdbc:5.2.3.RELEASE" />
             <element id="library" level="project" name="Maven: org.springframework:spring-tx:5.2.3.RELEASE" />
             <element id="library" level="project" name="Maven: org.hibernate:hibernate-core:5.4.11.Final" />
-            <element id="library" level="project" name="Maven: org.jboss.logging:jboss-logging:3.3.2.Final" />
             <element id="library" level="project" name="Maven: javax.persistence:javax.persistence-api:2.2" />
             <element id="library" level="project" name="Maven: net.bytebuddy:byte-buddy:1.10.7" />
-            <element id="library" level="project" name="Maven: antlr:antlr:2.7.7" />
+            <element id="library" level="project" name="Maven: org.hibernate.common:hibernate-commons-annotations:5.1.0.Final" />
+            <element id="library" level="project" name="Maven: mysql:mysql-connector-java:8.0.19" />
+            <element id="library" level="project" name="Maven: javax.servlet.jsp.jstl:javax.servlet.jsp.jstl-api:1.2.1" />
+            <element id="library" level="project" name="Maven: javax.servlet:javax.servlet-api:4.0.1" />
+            <element id="library" level="project" name="Maven: taglibs:standard:1.1.2" />
+            <element id="library" level="project" name="Maven: org.jboss.logging:jboss-logging:3.3.2.Final" />
             <element id="library" level="project" name="Maven: org.jboss.spec.javax.transaction:jboss-transaction-api_1.2_spec:1.1.1.Final" />
             <element id="library" level="project" name="Maven: org.jboss:jandex:2.1.1.Final" />
+            <element id="library" level="project" name="Maven: javax.xml.bind:jaxb-api:2.3.1" />
+            <element id="library" level="project" name="Maven: antlr:antlr:2.7.7" />
             <element id="library" level="project" name="Maven: com.fasterxml:classmate:1.5.1" />
+            <element id="library" level="project" name="Maven: com.google.protobuf:protobuf-java:3.6.1" />
+            <element id="library" level="project" name="Maven: com.sun.istack:istack-commons-runtime:3.0.7" />
+            <element id="library" level="project" name="Maven: com.sun.xml.fastinfoset:FastInfoset:1.2.15" />
             <element id="library" level="project" name="Maven: javax.activation:javax.activation-api:1.2.0" />
             <element id="library" level="project" name="Maven: org.dom4j:dom4j:2.1.1" />
-            <element id="library" level="project" name="Maven: org.hibernate.common:hibernate-commons-annotations:5.1.0.Final" />
             <element id="library" level="project" name="Maven: org.glassfish.jaxb:jaxb-runtime:2.3.1" />
             <element id="library" level="project" name="Maven: org.glassfish.jaxb:txw2:2.3.1" />
-            <element id="library" level="project" name="Maven: com.sun.istack:istack-commons-runtime:3.0.7" />
+            <element id="library" level="project" name="Maven: org.javassist:javassist:3.24.0-GA" />
             <element id="library" level="project" name="Maven: org.jvnet.staxex:stax-ex:1.8" />
-            <element id="library" level="project" name="Maven: com.sun.xml.fastinfoset:FastInfoset:1.2.15" />
-            <element id="library" level="project" name="Maven: org.hibernate.validator:hibernate-validator:6.1.2.Final" />
-            <element id="library" level="project" name="Maven: jakarta.validation:jakarta.validation-api:2.0.2" />
-            <element id="library" level="project" name="Maven: javax.servlet.jsp.jstl:javax.servlet.jsp.jstl-api:1.2.1" />
-            <element id="library" level="project" name="Maven: taglibs:standard:1.1.2" />
-            <element id="library" level="project" name="Maven: mysql:mysql-connector-java:8.0.19" />
-            <element id="library" level="project" name="Maven: com.google.protobuf:protobuf-java:3.6.1" />
-            <element id="library" level="project" name="Maven: javax.xml.bind:jaxb-api:2.3.1" />
-            <element id="library" level="project" name="Maven: org.javassist:javassist:3.26.0-GA" />
           </element>
         </element>
         <element id="javaee-facet-resources" facet="web6/web/Web" />
@@ -446,26 +445,15 @@
         <root url="jar://$MAVEN_REPOSITORY$/org/hibernate/hibernate-core/5.4.11.Final/hibernate-core-5.4.11.Final-sources.jar!/" />
       </SOURCES>
     </library>
-    <library name="Maven: org.hibernate:hibernate-entitymanager:5.4.11.Final">
+    <library name="Maven: org.javassist:javassist:3.24.0-GA">
       <CLASSES>
-        <root url="jar://$MAVEN_REPOSITORY$/org/hibernate/hibernate-entitymanager/5.4.11.Final/hibernate-entitymanager-5.4.11.Final.jar!/" />
+        <root url="jar://$MAVEN_REPOSITORY$/org/javassist/javassist/3.24.0-GA/javassist-3.24.0-GA.jar!/" />
       </CLASSES>
       <JAVADOC>
-        <root url="jar://$MAVEN_REPOSITORY$/org/hibernate/hibernate-entitymanager/5.4.11.Final/hibernate-entitymanager-5.4.11.Final-javadoc.jar!/" />
+        <root url="jar://$MAVEN_REPOSITORY$/org/javassist/javassist/3.24.0-GA/javassist-3.24.0-GA-javadoc.jar!/" />
       </JAVADOC>
       <SOURCES>
-        <root url="jar://$MAVEN_REPOSITORY$/org/hibernate/hibernate-entitymanager/5.4.11.Final/hibernate-entitymanager-5.4.11.Final-sources.jar!/" />
-      </SOURCES>
-    </library>
-    <library name="Maven: org.javassist:javassist:3.26.0-GA">
-      <CLASSES>
-        <root url="jar://$MAVEN_REPOSITORY$/org/javassist/javassist/3.26.0-GA/javassist-3.26.0-GA.jar!/" />
-      </CLASSES>
-      <JAVADOC>
-        <root url="jar://$MAVEN_REPOSITORY$/org/javassist/javassist/3.26.0-GA/javassist-3.26.0-GA-javadoc.jar!/" />
-      </JAVADOC>
-      <SOURCES>
-        <root url="jar://$MAVEN_REPOSITORY$/org/javassist/javassist/3.26.0-GA/javassist-3.26.0-GA-sources.jar!/" />
+        <root url="jar://$MAVEN_REPOSITORY$/org/javassist/javassist/3.24.0-GA/javassist-3.24.0-GA-sources.jar!/" />
       </SOURCES>
     </library>
     <library name="Maven: org.jboss.logging:jboss-logging:3.3.2.Final">

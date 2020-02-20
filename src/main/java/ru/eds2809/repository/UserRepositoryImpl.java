@@ -1,8 +1,8 @@
 package ru.eds2809.repository;
 
 import org.springframework.stereotype.Repository;
-import ru.eds2809.intarfaces.UserRepository;
 import ru.eds2809.model.User;
+import ru.eds2809.repository.interfaces.UserRepository;
 
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
@@ -10,7 +10,7 @@ import javax.persistence.Query;
 import java.util.List;
 
 @Repository
-public class HibernateEntityManagerRepository implements UserRepository {
+public class UserRepositoryImpl implements UserRepository {
 
     @PersistenceContext
     EntityManager em;

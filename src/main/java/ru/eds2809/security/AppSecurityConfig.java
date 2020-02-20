@@ -1,4 +1,4 @@
-package ru.eds2809.config;
+package ru.eds2809.security;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
@@ -15,6 +15,7 @@ import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.web.authentication.AuthenticationSuccessHandler;
 import ru.eds2809.handlers.AuthenticationSuccessHandlerImpl;
+import ru.eds2809.service.UserServiceImpl;
 
 @Configuration
 @EnableWebSecurity
@@ -22,9 +23,10 @@ import ru.eds2809.handlers.AuthenticationSuccessHandlerImpl;
 @ComponentScan("ru.eds2809")
 public class AppSecurityConfig extends WebSecurityConfigurerAdapter {
 
-    @Autowired
-    private UserDetailsService userDetailsService;
-
+    @Bean
+    public UserDetailsService getUserDetailService(){
+        return new UserServiceImpl();
+    }
 
     @Bean
     public BCryptPasswordEncoder passwordEncoder() {
@@ -34,26 +36,26 @@ public class AppSecurityConfig extends WebSecurityConfigurerAdapter {
     @Override
     protected void configure(AuthenticationManagerBuilder auth) throws Exception {
         auth
-                .userDetailsService(userDetailsService)
+                .userDetailsService(getUserDetailService())
                 .passwordEncoder(passwordEncoder());
     }
 
     @Override
     protected void configure(HttpSecurity http) throws Exception {
 
-        http.antMatcher("/*").anonymous();
+        //http.antMatcher("/*").anonymous();
 
-       /* http.authorizeRequests()
-                .antMatchers("/admin/**").access("hasRole('ROLE_ADMIN')")
-                .antMatchers("/").access("hasAnyRole('ROLE_USER','ROLE_ADMIN')")
+        http
+                    .authorizeRequests()
+                    .antMatchers("/admin/**").access("hasRole('ROLE_ADMIN')")
+                    .antMatchers("/").access("hasAnyRole('ROLE_USER','ROLE_ADMIN')")
                 .and()
-                .formLogin()
-                .defaultSuccessUrl("/", false)
-                .successHandler(getAuthenticationSuccessHandler())
+                    .formLogin()
+                    .defaultSuccessUrl("/", false)
+                    .successHandler(getAuthenticationSuccessHandler())
                 .and().logout()
-                .invalidateHttpSession(true)
-                .deleteCookies("JSESSIONID");*/
-
+                    .invalidateHttpSession(true)
+                    .deleteCookies("JSESSIONID");
 
     }
 

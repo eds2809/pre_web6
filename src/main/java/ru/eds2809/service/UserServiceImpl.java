@@ -1,30 +1,31 @@
 package ru.eds2809.service;
 
 
-import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.userdetails.UserDetails;
+import org.springframework.security.core.userdetails.UserDetailsService;
+import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
-import ru.eds2809.intarfaces.RoleRepository;
-import ru.eds2809.intarfaces.UserRepository;
-import ru.eds2809.intarfaces.UserService;
 import ru.eds2809.model.User;
+import ru.eds2809.repository.interfaces.RoleRepository;
+import ru.eds2809.repository.interfaces.UserRepository;
+import ru.eds2809.service.interfaces.UserService;
 
 import java.util.Collections;
 import java.util.List;
 
 @Service
 @Transactional
-public class UserServiceImpl implements UserService {
-    private final UserRepository userRepository;
-    private final PasswordEncoder passwordEncoder;
-    private final RoleRepository roleRepository;
+public class UserServiceImpl implements UserService, UserDetailsService {
 
-    public UserServiceImpl(@Qualifier("hibernateEntityManagerRepository") UserRepository userRepository, PasswordEncoder passwordEncoder, RoleRepository roleRepository) {
-        this.userRepository = userRepository;
-        this.passwordEncoder = passwordEncoder;
-        this.roleRepository = roleRepository;
-    }
+    @Autowired
+    private UserRepository userRepository;
+    @Autowired
+    private PasswordEncoder passwordEncoder;
+    @Autowired
+    private RoleRepository roleRepository;
 
     @Override
     public boolean save(String login, String pass, String email, String role) {
@@ -86,5 +87,12 @@ public class UserServiceImpl implements UserService {
     @Override
     public User getUserByLogin(String login) {
         return userRepository.getUserByLogin(login);
+    }
+
+    @Override
+    @Transactional
+    public UserDetails loadUserByUsername(String login) throws UsernameNotFoundException {
+        User user = getUserByLogin(login);
+        return new org.springframework.security.core.userdetails.User(user.getLogin(), user.getPass(), user.getRoles());
     }
 }

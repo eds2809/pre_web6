@@ -10,9 +10,9 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ViewResolver;
 import org.springframework.web.servlet.view.InternalResourceViewResolver;
-import ru.eds2809.intarfaces.RoleRepository;
-import ru.eds2809.intarfaces.UserService;
 import ru.eds2809.model.User;
+import ru.eds2809.repository.interfaces.RoleRepository;
+import ru.eds2809.service.interfaces.UserService;
 
 
 @Controller
@@ -87,15 +87,6 @@ public class AdminController {
                 role
         );
         return "redirect:/admin";
-    }
-
-
-    @Bean
-    ViewResolver viewResolver() {
-        InternalResourceViewResolver resolver = new InternalResourceViewResolver();
-        resolver.setPrefix("/WEB-INF/");
-        resolver.setSuffix(".jsp");
-        return resolver;
     }
 
 }

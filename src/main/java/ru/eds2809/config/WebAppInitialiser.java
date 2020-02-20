@@ -1,6 +1,7 @@
 package ru.eds2809.config;
 
 import org.springframework.web.servlet.support.AbstractAnnotationConfigDispatcherServletInitializer;
+import ru.eds2809.security.AppSecurityConfig;
 
 public class WebAppInitialiser extends AbstractAnnotationConfigDispatcherServletInitializer {
 

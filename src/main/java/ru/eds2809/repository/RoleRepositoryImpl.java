@@ -1,8 +1,8 @@
 package ru.eds2809.repository;
 
 import org.springframework.stereotype.Repository;
-import ru.eds2809.intarfaces.RoleRepository;
 import ru.eds2809.model.Role;
+import ru.eds2809.repository.interfaces.RoleRepository;
 
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;

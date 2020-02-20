@@ -1,4 +1,4 @@
-package ru.eds2809.intarfaces;
+package ru.eds2809.service.interfaces;
 
 
 import ru.eds2809.model.User;

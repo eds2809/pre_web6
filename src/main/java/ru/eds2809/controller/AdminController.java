@@ -1,15 +1,12 @@
 package ru.eds2809.controller;
 
 
-import org.springframework.context.annotation.Bean;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.servlet.ViewResolver;
-import org.springframework.web.servlet.view.InternalResourceViewResolver;
 import ru.eds2809.model.User;
 import ru.eds2809.repository.interfaces.RoleRepository;
 import ru.eds2809.service.interfaces.UserService;

@@ -1,6 +1,5 @@
 package ru.eds2809.security;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
@@ -15,7 +14,6 @@ import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.web.authentication.AuthenticationSuccessHandler;
 import ru.eds2809.handlers.AuthenticationSuccessHandlerImpl;
-import ru.eds2809.service.UserServiceImpl;
 
 @Configuration
 @EnableWebSecurity
@@ -23,9 +21,10 @@ import ru.eds2809.service.UserServiceImpl;
 @ComponentScan("ru.eds2809")
 public class AppSecurityConfig extends WebSecurityConfigurerAdapter {
 
-    @Bean
-    public UserDetailsService getUserDetailService(){
-        return new UserServiceImpl();
+   public final UserDetailsService userDetailsService;
+
+    public AppSecurityConfig(UserDetailsService userDetailsService) {
+        this.userDetailsService = userDetailsService;
     }
 
     @Bean
@@ -36,7 +35,7 @@ public class AppSecurityConfig extends WebSecurityConfigurerAdapter {
     @Override
     protected void configure(AuthenticationManagerBuilder auth) throws Exception {
         auth
-                .userDetailsService(getUserDetailService())
+                .userDetailsService(userDetailsService)
                 .passwordEncoder(passwordEncoder());
     }
 

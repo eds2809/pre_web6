@@ -1,7 +1,6 @@
 package ru.eds2809.controller;
 
 
-import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.security.core.Authentication;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;

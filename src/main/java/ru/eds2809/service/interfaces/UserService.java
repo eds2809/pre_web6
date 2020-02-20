@@ -5,7 +5,7 @@ import ru.eds2809.model.User;
 
 import java.util.List;
 
-public interface UserService{
+public interface UserService {
 
     boolean save(String login, String pass, String email, String role);
 
